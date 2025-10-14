@@ -4,17 +4,22 @@
  */
 package Janelas;
 
-/**
- *
- * @author william.flima4
- */
+import Objetos.Aluno;
+import java.awt.Component;
+import javax.swing.BoxLayout;
+import javax.swing.JLabel;
+
+
 public class Principal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Principal
-     */
+   private int contador = 0;
+   private Aluno[] aluno = new Aluno[5];
+   private JP jp;
+   
     public Principal() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        jLTopo.setText("Cadastro Aluno #" + (contador + 1));
     }
 
     /**
@@ -26,22 +31,162 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jSResult = new javax.swing.JScrollPane();
+        jBNova = new javax.swing.JButton();
+        jLTopo = new javax.swing.JLabel();
+        jBAdicionar = new javax.swing.JButton();
+        jBMostrar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jTAluno = new javax.swing.JTextField();
+        jTIdade = new javax.swing.JTextField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jSResult.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jBNova.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jBNova.setText("Cadastrar novamente");
+
+        jLTopo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLTopo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLTopo.setText("Cadastro de aluno #");
+
+        jBAdicionar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jBAdicionar.setText("Adicionar");
+        jBAdicionar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBAdicionarActionPerformed(evt);
+            }
+        });
+
+        jBMostrar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jBMostrar.setText("Mostrar");
+        jBMostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBMostrarActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Nome");
+
+        jLabel3.setText("Idade");
+
+        jTAluno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTAlunoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jBNova))
+                    .addComponent(jSResult)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(10, 10, 10)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTIdade, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jBAdicionar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jBMostrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jLTopo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLTopo)
+                .addGap(12, 12, 12)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBAdicionar)
+                    .addComponent(jLabel2)
+                    .addComponent(jTAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBMostrar)
+                    .addComponent(jLabel3)
+                    .addComponent(jTIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addComponent(jSResult, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jBNova)
+                .addGap(10, 10, 10))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jBMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBMostrarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBMostrarActionPerformed
+
+    private void jBAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAdicionarActionPerformed
+        Aluno a = new Aluno();
+        
+        if (contador < aluno.length){
+            a.setNome(jTAluno.getText());
+            a.setIdade(Integer.parseInt(jTIdade.getText()));
+            
+            aluno[contador] = a;
+            jTAluno.setText("");
+            jTIdade.setText("");
+            jTAluno.requestFocus();
+            contador++;
+            jLTopo.setText("Cadastro Aluno #" + (contador + 1));
+        
+        
+        if (contador == 5){
+            jTAluno.setEnabled(false);
+            jTIdade.setEnabled(false);
+            jBAdicionar.setEnabled(false);
+            mostrarCadastro();
+        }
+        }else{
+            jBAdicionar.setEnabled(false);
+        }
+    }//GEN-LAST:event_jBAdicionarActionPerformed
+
+    private void jTAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTAlunoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTAlunoActionPerformed
+
+        public void mostrarCadastro(){
+            jSResult.setLayout(new BoxLayout(jSResult, BoxLayout.Y_AXIS));
+            
+            for (Aluno aluno : aluno){
+                jp = new JP();
+                for (Component comp : jp.getComponents()){
+                    
+                    if (comp instanceof JLabel && "jLNome".equals(comp.getName())){
+                        JLabel labelNome = (JLabel) comp;
+                        labelNome.setText (aluno.getNome());
+                    }
+                    
+                    if (comp instanceof JLabel && "jLIdade".equals(comp.getName())){
+                        JLabel labelIdade = (JLabel) comp;
+                        labelIdade.setText(String.valueOf(aluno.getIdade()));
+                    }
+                }
+            }
+        }
+        
+        
     /**
      * @param args the command line arguments
      */
@@ -78,5 +223,14 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBAdicionar;
+    private javax.swing.JButton jBMostrar;
+    private javax.swing.JButton jBNova;
+    private javax.swing.JLabel jLTopo;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jSResult;
+    private javax.swing.JTextField jTAluno;
+    private javax.swing.JTextField jTIdade;
     // End of variables declaration//GEN-END:variables
 }
