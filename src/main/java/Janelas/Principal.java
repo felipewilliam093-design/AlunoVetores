@@ -31,7 +31,8 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jSResult = new javax.swing.JScrollPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jPResult = new javax.swing.JPanel();
         jBNova = new javax.swing.JButton();
         jLTopo = new javax.swing.JLabel();
         jBAdicionar = new javax.swing.JButton();
@@ -43,7 +44,22 @@ public class Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jSResult.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jScrollPane1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jPResult.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout jPResultLayout = new javax.swing.GroupLayout(jPResult);
+        jPResult.setLayout(jPResultLayout);
+        jPResultLayout.setHorizontalGroup(
+            jPResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 385, Short.MAX_VALUE)
+        );
+        jPResultLayout.setVerticalGroup(
+            jPResultLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 138, Short.MAX_VALUE)
+        );
+
+        jScrollPane1.setViewportView(jPResult);
 
         jBNova.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jBNova.setText("Cadastrar novamente");
@@ -88,7 +104,7 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jBNova))
-                    .addComponent(jSResult)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -123,7 +139,7 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(jTIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addComponent(jSResult, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jBNova)
                 .addGap(10, 10, 10))
@@ -167,7 +183,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jTAlunoActionPerformed
 
         public void mostrarCadastro(){
-            jSResult.setLayout(new BoxLayout(jSResult, BoxLayout.Y_AXIS));
+            jPResult.setLayout(new BoxLayout(jPResult, BoxLayout.Y_AXIS));
             
             for (Aluno aluno : aluno){
                 jp = new JP();
@@ -183,8 +199,13 @@ public class Principal extends javax.swing.JFrame {
                         labelIdade.setText(String.valueOf(aluno.getIdade()));
                     }
                 }
+                jPResult.add(jp);
             }
+           jPResult.revalidate();
+           jPResult.repaint();
         }
+ 
+        
         
         
     /**
@@ -229,7 +250,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLTopo;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JScrollPane jSResult;
+    private javax.swing.JPanel jPResult;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTAluno;
     private javax.swing.JTextField jTIdade;
     // End of variables declaration//GEN-END:variables

@@ -15,6 +15,8 @@ public class JP extends javax.swing.JPanel {
      */
     public JP() {
         initComponents();
+        jLNome.setName("jLNome");
+        jLIdade.setName("jLIdade");
     }
 
     /**
